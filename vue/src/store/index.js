@@ -1,12 +1,12 @@
-import {createStore} from "vuex"
+import { createStore } from "vuex";
 const store = createStore({
   state: {
-      user:{
-          data:{
-              name:'altaha',
-              token:null
-          }
-      }
+    user: {
+      data: {
+        name: "altaha",
+        token: null,
+      },
+    },
   },
   getters: {},
   actions: {},
@@ -14,4 +14,4 @@ const store = createStore({
   modules: {},
 });
 
-export default store
+export default store;
