@@ -156,6 +156,7 @@ import {
 } from "@headlessui/vue";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
 import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 import { computed } from "vue";
 
 const navigation = [
@@ -178,9 +179,17 @@ export default {
   },
   setup() {
     const store = useStore();
+    const router = useRouter();
+
+    function logout(){
+      store.commit('logout')
+      router.push({name:'Login'})
+    }
+    
     return {
       user: computed(() => store.state.user.data),
       navigation,
+      logout
     };
   },
 };
