@@ -30,7 +30,7 @@
                   :class="[
                     this.$route.name === item.to.name
                       ? ''
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      : 'text-gray-300 hover:bg-gray-700 hover:text-white bg-transparent',
                     'px-3 py-2 rounded-md text-sm font-medium',
                   ]"
                   >{{ item.name }}</router-link
@@ -113,9 +113,9 @@
             :to="item.to"
             active-class="bg-gray-900 text-white"
             :class="[
-              this.$route.name===item.to.name
+              this.$route.name === item.to.name
                 ? ''
-                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                : 'text-gray-300 hover:bg-gray-700 hover:text-white bg-transparent',
               'block px-3 py-2 rounded-md text-base font-medium',
             ]"
             >{{ item.name }}</router-link
