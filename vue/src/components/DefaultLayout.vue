@@ -40,9 +40,6 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
-              
-              
-
               <!-- Profile dropdown -->
               <Menu as="div" class="ml-3 relative">
                 <div>
@@ -68,9 +65,7 @@
                   <MenuItems
                     class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                   >
-                    <MenuItem
-                      v-slot="{ active }"
-                    >
+                    <MenuItem v-slot="{ active }">
                       <a
                         @click="logout"
                         :class="[
@@ -126,7 +121,6 @@
                 {{ user.email }}
               </div>
             </div>
-            
           </div>
           <div class="mt-3 px-2 space-y-1">
             <DisclosureButton
@@ -181,15 +175,16 @@ export default {
     const store = useStore();
     const router = useRouter();
 
-    function logout(){
-      store.commit('logout')
-      router.push({name:'Login'})
+    function logout() {
+      store.dispatch("logout").then(() => {
+        router.push({ name: "Login" });
+      });
     }
-    
+
     return {
       user: computed(() => store.state.user.data),
       navigation,
-      logout
+      logout,
     };
   },
 };
