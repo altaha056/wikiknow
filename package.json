@@ -14,5 +14,9 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14"
+    },
+    "dependencies": {
+        "@tailwindcss/line-clamp": "^0.3.1",
+        "vue2-form-loading": "^0.1.0"
     }
 }
